@@ -150,6 +150,10 @@ form label {
   background: orange;
 }
 
+.tag-strategy {
+  background: cyan;
+}
+
 .delete {
   position: absolute;
   top: 10px;
