@@ -14,6 +14,7 @@ class IdeaList {
     this._validTags.add('health');
     this._validTags.add('inventions');
     this._validTags.add('strategy');
+    this._validTags.add('mob');
   }
 
   addEventListeners() {

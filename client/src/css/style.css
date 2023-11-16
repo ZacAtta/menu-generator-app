@@ -155,6 +155,10 @@ form label {
   background: cyan;
 }
 
+.tag-mob {
+  background: chartreuse;
+}
+
 .delete {
   position: absolute;
   top: 10px;
