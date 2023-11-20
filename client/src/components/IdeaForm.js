@@ -62,8 +62,17 @@ class IdeaForm {
       <textarea name="text" id="idea-text"></textarea>
     </div>
     <div class="form-control">
-      <label for="tag">Tag</label>
-      <input type="text" name="tag" id="tag" />
+      <label for="tag">Choose a tag</label>
+      <select name="tag" id="tag">
+          <option value="business">Business</option>
+          <option value="strategy">Strategy</option>
+          <option value="inventions">Inventions</option>
+          <option value="education">Education</option>
+          <option value="health">Health</option>
+          <option value="software">Software</option>
+          <option value="technology">Technology</option>
+          <option value="mob">Mob</option>
+      </select>
     </div>
     <button class="btn" type="submit" id="submit">Submit</button>
   </form>
