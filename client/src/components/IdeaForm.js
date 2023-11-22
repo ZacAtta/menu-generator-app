@@ -16,7 +16,9 @@ class IdeaForm {
 
     if (
       !this._form.elements.text.value ||
+      !this._form.elements.app.value ||
       !this._form.elements.tag.value ||
+      !this._form.elements.appver.value ||
       !this._form.elements.username.value
     ) {
       alert('Please enter all fields');
@@ -28,7 +30,9 @@ class IdeaForm {
 
     const idea = {
       text: this._form.elements.text.value,
+      app: this._form.elements.app.value,
       tag: this._form.elements.tag.value,
+      appver: this._form.elements.appver.value,
       username: this._form.elements.username.value,
     };
 
@@ -40,7 +44,9 @@ class IdeaForm {
 
     // Clear fields
     this._form.elements.text.value = '';
+    this._form.elements.app.value = '';
     this._form.elements.tag.value = '';
+    this._form.elements.appver.value = '';
     this._form.elements.username.value = '';
 
     this.render();
@@ -56,6 +62,14 @@ class IdeaForm {
       <input type="text" name="username" id="username" value="${
         localStorage.getItem('username') ? localStorage.getItem('username') : ''
       }" />
+    </div>
+    <div class="form-control">
+      <label for="idea-app">Enter an Application</label>
+      <input type="text" name="app" id="app" />
+    </div>
+    <div class="form-control">
+      <label for="idea-appver">Enter an Application Version Number</label>
+      <input type="text" name="appver" id="appver" />
     </div>
     <div class="form-control">
       <label for="idea-text">What's Your Idea?</label>

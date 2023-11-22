@@ -75,9 +75,12 @@ class IdeaList {
         return `
       <div class="card" data-id="${idea._id}">
      ${deleteBtn}
-      <h3>
+     <h3>
+       ${idea.app} - Version ${idea.appver}
+     </h3>
+      <p>
         ${idea.text}
-      </h3>
+      </p>
       <p class="tag ${tagClass}">${idea.tag.toUpperCase()}</p>
       <p>
         Posted on <span class="date">${idea.date}</span> by

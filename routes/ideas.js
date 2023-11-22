@@ -30,6 +30,8 @@ router.post('/', async (req, res) => {
     text: req.body.text,
     tag: req.body.tag,
     username: req.body.username,
+    app: req.body.app,
+    appver: req.body.appver,
   });
 
   try {
@@ -54,6 +56,8 @@ router.put('/:id', async (req, res) => {
           $set: {
             text: req.body.text,
             tag: req.body.tag,
+            app: req.body.app,
+            appver: req.body.appver,
           },
         },
         { new: true }

@@ -11,6 +11,12 @@ const IdeaSchema = new mongoose.Schema({
   username: {
     type: String,
   },
+  app: {
+    type: String,
+  },
+  appver: {
+    type: String,
+  },
   date: {
     type: Date,
     default: Date.now,
