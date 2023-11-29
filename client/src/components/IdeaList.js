@@ -76,7 +76,7 @@ class IdeaList {
       <div class="card" data-id="${idea._id}">
      ${deleteBtn}
      <h3>
-       ${idea.app} - Version ${idea.appver}
+       ${idea.app} - Version ${idea.appver}     b     
      </h3>
       <p>
         ${idea.text}
@@ -95,3 +95,4 @@ class IdeaList {
 }
 
 export default IdeaList;
+ 
