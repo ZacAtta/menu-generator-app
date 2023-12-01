@@ -1,20 +1,12 @@
 import IdeasApi from '../services/ideasApi';
+import TagsApi from '../services/tagsApi';
 
 class IdeaList {
   constructor() {
     this._ideaListEl = document.querySelector('#idea-list');
     this._ideas = [];
+    this._tags = [];
     this.getIdeas();
-
-    this._validTags = new Set();
-    this._validTags.add('technology');
-    this._validTags.add('software');
-    this._validTags.add('business');
-    this._validTags.add('education');
-    this._validTags.add('health');
-    this._validTags.add('inventions');
-    this._validTags.add('strategy');
-    this._validTags.add('mob');
   }
 
   addEventListeners() {
@@ -31,6 +23,7 @@ class IdeaList {
     try {
       const res = await IdeasApi.getIdeas();
       this._ideas = res.data.data;
+      await this.getTags();
       this.render();
     } catch (error) {
       console.log(error);
@@ -53,21 +46,27 @@ class IdeaList {
     this.render();
   }
 
-  getTagClass(tag) {
-    tag = tag.toLowerCase();
-    let tagClass = '';
-    if (this._validTags.has(tag)) {
-      tagClass = `tag-${tag}`;
-    } else {
-      tagClass = '';
+  async getTags() {
+    try {
+      const res = await TagsApi.getTags();
+      this._tags = res.data.data;
+    } catch (error) {
+      console.log(error);
     }
-    return tagClass;
+  }
+
+  getTagColor(tag) {
+    let tagItem = this._tags.find(item => item.tagName === tag);
+    if (!tagItem) {
+      return 'red';
+    };
+    return tagItem.tagColor
   }
 
   render() {
     this._ideaListEl.innerHTML = this._ideas
       .map((idea) => {
-        const tagClass = this.getTagClass(idea.tag);
+        const tagColor = this.getTagColor(idea.tag);
         const deleteBtn =
           idea.username === localStorage.getItem('username')
             ? `<button class="delete"><i class="fas fa-times"></i></button>`
@@ -76,12 +75,12 @@ class IdeaList {
       <div class="card" data-id="${idea._id}">
      ${deleteBtn}
      <h3>
-       ${idea.app} - Version ${idea.appver}     b     
+       ${idea.app}     
      </h3>
       <p>
         ${idea.text}
       </p>
-      <p class="tag ${tagClass}">${idea.tag.toUpperCase()}</p>
+      <p style="background-color:  ${tagColor};" class='tag'>${idea.tag.toUpperCase()}</p>
       <p>
         Posted on <span class="date">${idea.date}</span> by
         <span class="author">${idea.username}</span>

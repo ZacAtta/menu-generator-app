@@ -27,6 +27,16 @@ header {
   left: 10px;
 }
 
+#tag-modal-btn {
+  border: none;
+  background: none;
+  color: gray;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
 .modal {
   display: none;
   position: fixed;
@@ -136,38 +146,6 @@ form label {
   border-radius: 5px;
   margin: 5px;
   font-size: 14px;
-}
-
-.tag-technology {
-  background: steelblue;
-}
-
-.tag-software {
-  background: coral;
-}
-
-.tag-business {
-  background: green;
-}
-
-.tag-education {
-  background: purple;
-}
-
-.tag-health {
-  background: red;
-}
-
-.tag-inventions {
-  background: orange;
-}
-
-.tag-strategy {
-  background: cyan;
-}
-
-.tag-mob {
-  background: chartreuse;
 }
 
 .delete {

@@ -31,4 +31,7 @@ app.get('/', (req, res) => {
 const ideasRouter = require('./routes/ideas');
 app.use('/api/ideas', ideasRouter);
 
+const tagsRouter = require('./routes/tags');
+app.use('/api/tags', tagsRouter);
+
 app.listen(port, () => console.log(`Server listening on port ${port}`));
