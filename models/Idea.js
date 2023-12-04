@@ -14,7 +14,7 @@ const IdeaSchema = new mongoose.Schema({
   app: {
     type: String,
   },
-  appver: {
+  imageUrl: {
     type: String,
   },
   date: {

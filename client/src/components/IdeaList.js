@@ -80,6 +80,7 @@ class IdeaList {
       <p>
         ${idea.text}
       </p>
+      <img src="${idea.imageUrl}" alt="Your Image Description" class="image">
       <p style="background-color:  ${tagColor};" class='tag'>${idea.tag.toUpperCase()}</p>
       <p>
         Posted on <span class="date">${idea.date}</span> by

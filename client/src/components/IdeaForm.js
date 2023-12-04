@@ -28,6 +28,7 @@ class IdeaForm {
       !this._form.elements.text.value ||
       !this._form.elements.app.value ||
       !this._form.elements.tag.value ||
+      !this._form.elements.imageUrl.value ||
       !this._form.elements.username.value
     ) {
       alert("Please enter all fields");
@@ -41,6 +42,7 @@ class IdeaForm {
       text: this._form.elements.text.value,
       app: this._form.elements.app.value,
       tag: this._form.elements.tag.value,
+      imageUrl: this._form.elements.imageUrl.value,
       username: this._form.elements.username.value,
     };
 
@@ -54,6 +56,7 @@ class IdeaForm {
     this._form.elements.text.value = "";
     this._form.elements.app.value = "";
     this._form.elements.tag.value = "";
+    this._form.elements.imageUrl.value = "";
     this._form.elements.username.value = "";
 
     this.render();
@@ -87,6 +90,10 @@ class IdeaForm {
       <label for="idea-text">What's Your Idea?</label>
       <textarea name="text" id="idea-text"></textarea>
     </div>
+    <div class="form-control">
+    <label for="idea-image">Enter a Image URL</label>
+    <input type="text" name="imageUrl" id="imageUrl" />
+  </div>
     <div class="form-control">
       <label for="tag">Choose a tag</label>
       <select name="tag" id="tag">

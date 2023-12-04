@@ -31,7 +31,7 @@ router.post('/', async (req, res) => {
     tag: req.body.tag,
     username: req.body.username,
     app: req.body.app,
-    appver: req.body.appver,
+    imageUrl: req.body.imageUrl,
   });
 
   try {
@@ -57,7 +57,7 @@ router.put('/:id', async (req, res) => {
             text: req.body.text,
             tag: req.body.tag,
             app: req.body.app,
-            appver: req.body.appver,
+            imageUrl: req.body.imageUrl,
           },
         },
         { new: true }
